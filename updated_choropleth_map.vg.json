@@ -1,0 +1,73 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "COVID-19 Active Cases (10 Oct 2020)",
+    "width": 800,
+    "height": 400,
+    "projection": {
+        "type": "equalEarth"
+    },
+    "data": {
+        "url": "updated_states_provinces.json",
+        "format": {
+            "type": "topojson",
+            "feature": "ne_10m_admin_1_states_provinces"
+        }
+    },
+    "transform": [
+        {
+            "lookup": "properties.NAME",
+            "from": {
+                "data": {
+                    "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/3_choropleth_map/data/covid_10_10_2020.csv"
+                },
+                "key": "Country",
+                "fields": [
+                    "Active"
+                ]
+            }
+        },
+        {
+            "calculate": "datum.Active + 0.1",
+            "as": "Active Cases"
+        }
+    ],
+    "mark": {
+        "type": "geoshape"
+    },
+    "encoding": {
+        "color": {
+            "field": "properties.AvgTemps[yearSlider.Year]",
+            "type": "quantitative",
+            "title": "Average Temperature"
+        },
+        "tooltip": [
+            {
+                "field": "properties.NAME",
+                "type": "nominal",
+                "title": "Country"
+            },
+            {
+                "field": "Active",
+                "type": "quantitative"
+            }
+        ]
+    },
+    "selection": {
+        "yearSlider": {
+            "type": "single",
+            "fields": [
+                "Year"
+            ],
+            "bind": {
+                "input": "range",
+                "min": 2008,
+                "max": 2022,
+                "step": 1,
+                "name": "Year"
+            },
+            "init": {
+                "Year": 2008
+            }
+        }
+    }
+}
