@@ -1,8 +1,5 @@
-// Vega-Lite JSON specification
-const spec = {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    // ... (Your Vega-Lite specification here) ...
-};
+// URL of the Vega-Lite JSON specification
+const specURL = "https://github.com/suxyu/3179-a2/blob/main/heatmap_tem_hum.json?raw=true";
 
 // Embed the Vega-Lite visualization in the placeholder div
-vegaEmbed('#vis', spec);
+vegaEmbed('#vis', specURL);
