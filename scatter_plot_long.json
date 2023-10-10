@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
+    },
+    "mark": "circle",
+    "encoding": {
+      "x": {
+        "field": "longtitude",
+        "type": "quantitative",
+        "title": "Longitude",
+        "scale": {
+          "domain": [135, 155]
+        }
+      },
+      "y": {
+        "field": "ratio",
+        "type": "quantitative",
+        "title": "Ratio"
+      },
+      "tooltip": [
+        {
+          "field": "name",
+          "type": "nominal",
+          "title": "Species"
+        },
+        {
+          "field": "longtitude",
+          "type": "quantitative",
+          "title": "Longitude"
+        },
+        {
+          "field": "ratio",
+          "type": "quantitative",
+          "title": "Ratio"
+        }
+      ]
+    },
+    "title": "Wing aspect Ratio vs Longitude"
+  }

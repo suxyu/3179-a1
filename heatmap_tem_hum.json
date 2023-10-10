@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
+    },
+    "transform": [{
+      "filter": {"and": [
+        {"field": "year_avg_temperature", "valid": true},
+        {"field": "year_avg_humidity", "valid": true}
+      ]}
+    }],
+    "mark": "rect",
+    "width": 300,
+    "height": 200,
+    "encoding": {
+      "x": {
+        "bin": {"maxbins":10},
+        "field": "year_avg_temperature",
+        "type": "quantitative",
+        "title": "Average Temperature (°C)"
+      },
+      "y": {
+        "bin": {"maxbins": 10},
+        "field": "year_avg_humidity",
+        "type": "quantitative",
+        "title": "Average Humidity (%)"
+      },
+      "color": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Number of Records"
+      }
+    },
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      }
+    }
+  }

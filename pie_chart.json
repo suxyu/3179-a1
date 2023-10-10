@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "values": [
+      {"name": "Heteronympha merope", "count": 155},
+      {"name": "Pieris rapae", "count": 11}
+    ]
+  },
+  "mark": "arc",
+  "encoding": {
+    "theta": {
+      "field": "count",
+      "type": "quantitative",
+      "stack": true
+    },
+    "color": {
+      "field": "name",
+      "type": "nominal",
+      "legend": {
+        "title": "Species"
+      },
+      "scale": {
+        "domain": ["Heteronympha merope", "Pieris rapae"],
+        "range": ["#1f77b4", "#ff7f0e"]
+      }
+    },
+    "tooltip": [
+      {
+        "field": "name",
+        "type": "nominal",
+        "title": "Species"
+      },
+      {
+        "field": "count",
+        "type": "quantitative",
+        "title": "Count"
+      }
+    ]
+  },
+  "view": {
+    "stroke": null
+  }
+}

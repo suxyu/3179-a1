@@ -1,0 +1,76 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
+    },
+    "vconcat": [
+      {
+        "mark": "rect",
+        "encoding": {
+          "y": {
+            "bin": {"maxbins": 20},
+            "field": "ratio",
+            "type": "quantitative",
+            "title":"wing aspect ratio"
+          },
+          "x": {
+            "bin": {"maxbins": 20},
+            "field": "year_avg_temperature",
+            "type": "quantitative",
+            "title": "Average Temperature (°C)"
+          },
+          "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": "rect",
+        "encoding": {
+          "y": {
+            "bin": {"maxbins": 20},
+            "field": "ratio",
+            "type": "quantitative",
+            "title":"wing aspect ratio"
+          },
+          "x": {
+            "bin": {"maxbins": 20},
+            "field": "longtitude",
+            "type": "quantitative",
+            "title": "longtitude"
+          },
+          "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+          {
+        "mark": "rect",
+        "encoding": {
+          "y": {
+            "bin": {"maxbins": 20},
+            "field": "ratio",
+            "type": "quantitative",
+            "title":"wing aspect ratio"
+          },
+          "x": {
+            "bin": {"maxbins": 20},
+            "field": "latitude",
+            "type": "quantitative",
+            "title": "latitude"
+          },
+          "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+          }
+        }
+      },
+    ],
+    "config": {
+      "view": {
+        "stroke": "transparent"
+      }
+    }
+  }

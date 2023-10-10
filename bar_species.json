@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+      "x": {
+        "field": "name",
+        "type": "nominal",
+        "title": "Species",
+        "sort": "-y"
+      },
+      "y": {
+        "aggregate": "count",
+        "type": "quantitative",
+        "title": "Number of Records"
+      },
+      "color": {
+        "field": "name",
+        "type": "nominal",
+        "legend": {
+          "title": "Species"
+        }
+      },
+      "tooltip": [
+        {
+          "aggregate": "count",
+          "type": "quantitative",
+          "title": "Number of Records"
+        },
+        {
+          "field": "name",
+          "type": "nominal",
+          "title": "Species"
+        }
+      ]
+    },
+    "title": "Count of Records for Each Species"
+  }
