@@ -1,24 +1,225 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vega-Lite Visualizations</title>
-    <link rel="stylesheet" href="styles.css">
+  <title>Data Visualization 2 - wing aspect ratio</title>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="styles.css" media="all">
+
+
 </head>
+
 <body>
-    <div class="container">
-        <h1>Placeholder Title</h1>
-        <p>This is a placeholder text. You can replace this with your content.</p>
 
-        <div id="vis"></div> <!-- Placeholder for the Vega-Lite visualization -->
+  <div class="page">
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-1">
+        <h1>Data visualization 2</h1>
+        <p>Author: Xiaoyu Sun
+           Student ID:32950683
+           Tutor: Joe Liu
+           Lab Session:24
         
-        <p>Another placeholder text section. You can replace or expand upon this as needed.</p>
+        </p>
+      </div>
     </div>
+    <!-- end pure grid group -->
 
-    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    <script src="https://raw.githubusercontent.com/suxyu/3179-a2/main/script.js"></script>
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>butterfly recordings on Australian map</h2>
+            <img src="wing_aspect.jpg" alt="Description of Image" width = 100 height = 100>
+            <p>This visualization uses butterfly data from https://www.ala.org.au/ The butterfly species are Heteronympha merope and Pieris rapae.
+                The definition of wing aspect ratio in this visualization is the (width of the bounding box )/(height of the bounding box)
+                The size of circle indicates the butterfly wing aspect ratio </p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis6" class="vis-container"></div>
+        </div>
+      </div>
+      <!-- end pure grid group -->
+
+
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>species pie chart</h2>
+            <p>this is a place holder </p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis5" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>wing aspect ratio heat maps</h2>
+          <p>This is place holder </p>
+        </div>
+      </div>
+      <div class="pure-u-2-3">
+        <div id="vis1" class="vis-container"></div>
+      </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>scatter plot of wing aspect ratio with longtitude and latitude</h2>
+            <p>this visualization has an interactivity. you can click on the legend to change the opacity of the dots </p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis2" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+    <!-- pure grid group -->
+    <div class="pure-g">
+        <div class="pure-u-1-3">
+          <div class="description description-left">
+            <h2>occrence vs year</h2>
+            <p>occurence bar chart </p>
+          </div>
+        </div>
+        <div class="pure-u-2-3">
+          <div id="vis7" class="vis-container"></div>
+        </div>
+    </div>
+    <!-- end pure grid group -->
+
+
+
+
+
+
+        
+    <!-- pure grid group 
+    <div class="pure-g">
+        <div class="pure-u-1-2">
+          <div class="description description-left">
+            <h2>Temperature huminity heatmap</h2>
+            <p>this is a placeholder </p>
+          </div>
+        </div>
+        <div class="pure-u-1-2">
+          <div id="vis4" class="vis-container"></div>
+        </div>
+    </div>
+     end pure grid group -->
+    
+
+    
+
+
+
+
+<!--
+    
+    <div class="pure-g">
+      <div class="pure-u-1-3">
+        <div class="description description-left">
+          <h2>temperature huminity heatmap</h2>
+          <p>This is the place holder</p>
+        </div>
+      </div>
+      <div class="pure-u-1-3">
+        <div id="vis4" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3" style="width: 31.5%;">
+        <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
+      </div>
+
+    </div>
+   
+
+    
+    <div class="pure-g">
+      <div class="pure-u-2-3">
+        <div id="vis2" class="vis-container"></div>
+      </div>
+      <div class="pure-u-1-3">
+        <div class="description description-right">
+          <h2>First and Second Columns Combined</h2>
+          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
+            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
+            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
+        </div>
+      </div>
+
+    </div>
+    
+-->
+  
+
+
+  </div> <!-- end page -->
+
+  <script type="text/javascript">
+    var specVis1 = "./wing_aspect_ratio_heat.json";
+    var specVis2 = "./scatter_plot_long.json";
+    var specVis3 = "./bar_species.json"
+    var specVis4 = "./heatmap_tem_hum.json"
+    var specVis5 = "./pie_chart.json"
+    var specVis6 = "./map.json"
+    var specVis7 = "./occurence_bar.json"
+
+    vegaEmbed('#vis1', specVis1, { "actions": false });
+
+    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+
+    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
+      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+    }).catch(console.error);
+  </script>
 </body>
+
 </html>

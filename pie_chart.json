@@ -1,11 +1,27 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width":800,
+  "height": 250,
   "data": {
     "values": [
       {"name": "Heteronympha merope", "count": 155},
       {"name": "Pieris rapae", "count": 11}
     ]
   },
+  "transform": [
+    {
+      "window": [{
+        "op": "sum",
+        "field": "count",
+        "as": "total"
+      }],
+      "frame": [null, null]
+    },
+    {
+      "calculate": "datum.count / datum.total * 100",
+      "as": "percentage"
+    }
+  ],
   "mark": "arc",
   "encoding": {
     "theta": {
@@ -34,6 +50,12 @@
         "field": "count",
         "type": "quantitative",
         "title": "Count"
+      },
+      {
+        "field": "percentage",
+        "type": "quantitative",
+        "title": "Percentage",
+        "format": ".2f"
       }
     ]
   },
