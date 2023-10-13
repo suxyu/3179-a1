@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 40px;
+    background-color: #f4f4f4;
+    text-align: center; /* Align text to the center */
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px; /* Add space between containers */
+}
+
+.vis-container {
+    display: flex; /* Using Flexbox for centering chart */
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: auto; 
+    width: 100%; /* Taking full width of its parent */
+}
+
+h1, p {
+    color: #333;
+}
+
+/* Additional CSS to ensure all elements within the container are centered */
+.container * {
+    text-align: center;
+}
+
+/* Handling image sizes if used within the container */
+.container img {
+    max-width: 100%;
+    height: auto;
+}

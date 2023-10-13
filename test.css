@@ -1,0 +1,115 @@
+html,
+body {
+  background-color: #d1f7ef;
+}
+
+
+
+#mainTitle {
+    background-color: #014b04; /* Green background */
+    color: white; /* White text color */
+    text-align: center; /* Centered text */
+    font-size: 50px; /* Set font size */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Padding around the text */
+    border-radius: 0px; /* Rounded corners */
+    font-family: "Times New Roman", Times, serif; /* Serif font */
+
+
+
+    margin-left:200px;
+    margin-right:200px;
+    border-radius: 15px;
+}
+
+.sectiontitle{
+    background-color: #9daf4c; /* Green background */
+    color: white; /* White text color */
+    text-align: center; /* Centered text */
+    font-size: 50px; /* Set font size */
+    font-weight: bold; /* Bold text */
+    padding: 10px; /* Padding around the text */
+    border-radius: 0px; /* Rounded corners */
+    font-family: "Times New Roman", Times, serif; /* Serif font */
+
+
+    margin-left:300px;
+    margin-right:300px;
+    border-radius: 15px;
+
+}
+
+.bodytext{
+    background-color: #b9bea5; /* Green background */
+    color: rgb(11, 11, 11); /* White text color */
+    text-align: center; /* Centered text */
+    font-size: 30px; /* Set font size */
+    font-weight: lighter; /* Bold text */
+    padding: 10px; /* Padding around the text */
+    border-radius: 15px; /* Rounded corners */
+    font-family: "Times New Roman", Times, serif; /* Serif font */
+
+
+    margin-left:300px;
+    margin-right:300px;
+    margin-bottom: 100px;
+}
+
+
+
+
+
+.chart {
+    margin-top:15px;
+    margin-bottom:15px;
+
+    border-radius: 15px;
+    padding: 0;
+    width: 100%;
+    
+}
+
+.chart-holder {
+    margin:10;
+}
+
+
+.separation-bar {
+    border: 0;
+    height: 20px; /* Adjust thickness */
+    background-image: linear-gradient(270deg, #011a0a, #0fa911, #dcece5); /* Gradient */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.1); /* Shadow */
+    margin: 20px 0; /* Vertical Spacing */
+    animation: movingGradient 3s infinite; /* Animation */
+}
+
+@keyframes movingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+
+div {
+  display: flex;
+  justify-content: center;
+  font-family: "Montserrat";
+}
+
+.vega-actions {
+  display: none;
+  pointer-events: none;
+}
+
+/* 
+font-family: 'Montserrat', sans-serif;
+ */

@@ -1,78 +1,106 @@
 {
-    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "width":800,
-    "data": {
-      "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
-    }, 
-    "hconcat": [
-      { 
-        "mark": "rect",
-        "encoding": {
-          "y": {
-            "bin": {"maxbins": 20},
-            "field": "ratio",
-            "type": "quantitative",
-            "title":"wing aspect ratio"
-          },
-          "x": {
-            "bin": {"maxbins": 20},
-            "field": "year_avg_temperature",
-            "type": "quantitative",
-            "title": "Average Temperature (°C)"
-          },
-          "color": {
-            "aggregate": "count",
-            "type": "quantitative"
-          }
-        }
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 400,
+   "data": {
+    "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
+  }, 
+  "vconcat": [
+      {
+          "hconcat": [
+              {
+                  "mark": "rect",
+                  "encoding": {
+                      "y": {
+                          "bin": {"maxbins": 20},
+                          "field": "ratio",
+                          "type": "quantitative",
+                          "title": "Wing Aspect Ratio"
+                      },
+                      "x": {
+                          "bin": {"maxbins": 20},
+                          "field": "year_avg_temperature",
+                          "type": "quantitative",
+                          "title": "Average Temperature (°C)"
+                      },
+                      "color": {
+                          "aggregate": "count",
+                          "type": "quantitative"
+                      }
+                  }
+              },
+              {
+                  "mark": "rect",
+                  "encoding": {
+                      "y": {
+                          "bin": {"maxbins": 20},
+                          "field": "ratio",
+                          "type": "quantitative",
+                          "title": "Wing Aspect Ratio"
+                      },
+                      "x": {
+                          "bin": {"maxbins": 20},
+                          "field": "year_avg_wind",
+                          "type": "quantitative",
+                          "title": "Average Wind Speed"
+                      },
+                      "color": {
+                          "aggregate": "count",
+                          "type": "quantitative"
+                      }
+                  }
+              }
+          ]
       },
-      { 
-        "mark": "rect",
-        "encoding": {
-          "y": {
-            "bin": {"maxbins": 20},
-            "field": "ratio",
-            "type": "quantitative",
-            "title":"wing aspect ratio"
-          },
-          "x": {
-            "bin": {"maxbins": 20},
-            "field": "longtitude",
-            "type": "quantitative",
-            "title": "longtitude"
-          },
-          "color": {
-            "aggregate": "count",
-            "type": "quantitative"
-          }
-        }
-      },
-          {
-        
-        "mark": "rect",
-        "encoding": {
-          "y": {
-            "bin": {"maxbins": 20},
-            "field": "ratio",
-            "type": "quantitative",
-            "title":"wing aspect ratio"
-          },
-          "x": {
-            "bin": {"maxbins": 20},
-            "field": "latitude",
-            "type": "quantitative",
-            "title": "latitude"
-          },
-          "color": {
-            "aggregate": "count",
-            "type": "quantitative"
-          }
-        }
+      {
+          "hconcat": [
+              {
+                  "mark": "rect",
+                  "encoding": {
+                      "y": {
+                          "bin": {"maxbins": 20},
+                          "field": "ratio",
+                          "type": "quantitative",
+                          "title": "Wing Aspect Ratio"
+                      },
+                      "x": {
+                          "bin": {"maxbins": 20},
+                          "field": "year_avg_humidity",
+                          "type": "quantitative",
+                          "title": "Average Humidity"
+                      },
+                      "color": {
+                          "aggregate": "count",
+                          "type": "quantitative"
+                      }
+                  }
+              },
+              {
+                  "mark": "rect",
+                  "encoding": {
+                      "y": {
+                          "bin": {"maxbins": 20},
+                          "field": "ratio",
+                          "type": "quantitative",
+                          "title": "Wing Aspect Ratio"
+                      },
+                      "x": {
+                          "bin": {"maxbins": 20},
+                          "field": "year_avg_precip",
+                          "type": "quantitative",
+                          "title": "Average Preciption"
+                      },
+                      "color": {
+                          "aggregate": "count",
+                          "type": "quantitative"
+                      }
+                  }
+              }
+          ]
       }
-    ],
-    "config": {
+  ],
+  "config": {
       "view": {
-        "stroke": "transparent"
+          "stroke": "transparent"
       }
-    }
   }
+}

@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width":500,
+    "height":200,
+    "data": {"url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"},
+    "mark": "boxplot",
+    "encoding": {
+      "y": {"field": "name", "type": "nominal"},
+      "x": {"field": "ratio", "type": "quantitative"},
+      "color": {"field": "name", "type": "nominal"}
+    }
+  }
