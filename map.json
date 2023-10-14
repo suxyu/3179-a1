@@ -27,22 +27,26 @@
       "data": {
         "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
       },
+        "transform": [
+    {
+      "calculate": "datum.ratio >= 2.5 ? 'Large' : datum.ratio >= 2 ? 'Medium' : 'Small'",
+      "as": "size_bin"
+    }
+  ],
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longtitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-        "size": {
-          "field": "ratio",
-          "type": "quantitative",
-          "title": null,
-          "scale": {"domain": [1, 3], "type": "linear"},
-          "legend": null
-        },
-        "color": {
-          "field": "ratio",
-          "type": "quantitative",
-          "scale": {"scheme": "reds", "type": "linear"},
-          "legend": {"title": "Wing Aspect Ratio"}
+   "size": {
+      "field": "size_bin",
+      "type": "ordinal",
+      "scale": {"domain": ["Small", "Medium", "Large"], "range": [100, 300, 500]},
+      "legend": {"title": "Wing Aspect ratio"}
+    },
+         "color": {
+          "field": "name",
+          "type": "nominal",
+          "legend": {"title": "Butterfly Name"}
         },
         "tooltip": [
           {"field": "ratio", "type": "quantitative", "title": "Wing Aspect Ratio"},

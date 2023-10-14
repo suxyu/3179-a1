@@ -5,8 +5,8 @@
     "data": {"url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"},
     "mark": "boxplot",
     "encoding": {
-      "y": {"field": "name", "type": "nominal"},
-      "x": {"field": "ratio", "type": "quantitative"},
-      "color": {"field": "name", "type": "nominal"}
+      "y": {"field": "name", "type": "nominal","title":"Butterfly Species"},
+      "x": {"field": "ratio", "type": "quantitative","title":"Wing Aspect Ratio"},
+      "color": {"field": "name", "type": "nominal","title":null}
     }
   }
