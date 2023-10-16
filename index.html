@@ -1,289 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    <head>
+        <title>Data Visualization 2 - wing aspect ratio</title>
+        <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+        <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+      
+        <!-- Import pure.css -->
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+          integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+        <!-- Google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+      
+        <!-- CSS file -->
+        <link rel="stylesheet" type="text/css" href="test.css" media="all">
+      
+      
+    </head>
+  <body>
 
-<head>
-  <title>Data Visualization 2 - wing aspect ratio</title>
-  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
-  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+    <div id="mainTitle">Butterfly Wing Aspect Ratio in Australia</div>
+    <div class="pretext">
+        Butterfly is one of the most common inserts. They help pollination and
+        can be benefitial to agriculture making it valuable to study them. 
+        Wing aspect ratio is the metric I chose to study as it could be relatively
+        easy to get from online butterfly images. The definition of wing aspect ratio 
+        in this study is the ratio of wing span and wing width. The bigger this value
+        is, the longer and narrower the wing will be. <br>
+        <br>
+        In this study, Heteronympha merope
+        and Pieris Rapae, two special butterfly species, are chosen as they are one of the most common
+        butterflies and provide more data.
 
-  <!-- Import pure.css -->
-  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
-    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
-  <!-- CSS file -->
-  <link rel="stylesheet" type="text/css" href="styles_modified.css" media="all">
-
-
-</head>
-
-<body>
-    
-
-  <div class="page">
-  <div class="header">
-    <h1 id="title">Butterfly Wing Aspect Ratio Visualization</h1>
-    <p>Author: Xiaoyu Sun</p>
-    <p>Student ID:32950683</p>
-    <p>Tutor: Joe Liu</p>
-    <p> Lab Session:24</p>
-  </div>
-
-  
-  <div class="pure-g section">
-    <div class="chart-holder">
-      <div class="vis-container" id="vis6"></div>
     </div>
-    
-    <div class="pure-u-1 text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-      laborum pariatur, odit deleniti quaerat quia enim? Hic et, temporibus
-      explicabo est impedit similique quo, commodi vitae minima iure,
-      blanditiis obcaecati! Sed nihil, atque distinctio debitis aliquam
-      culpa quibusdam, expedita dolorum, aliquid odit veniam assumenda.
-      Adipisci distinctio quos velit nobis minus praesentium debitis
-      quaerat, iste aspernatur exercitationem libero. Quasi, blanditiis hic!
-      Amet asperiores autem cumque, laudantium saepe deserunt veritatis
-      officiis libero ad sunt, provident, ducimus tenetur officia illum
-      eligendi voluptatum tempora! Deleniti minima quo molestias nisi ea
-      illo modi at aliquid!
-    </div>
-  </div>
-
-  <div class="pure-g section">
-    <div class="chart-holder">
-      <div class="pure-u-1 chart" id="vis5"></div>
-    </div>
-    
-    <div class="pure-u-1 text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-      laborum pariatur, odit deleniti quaerat quia enim? Hic et, temporibus
-      explicabo est impedit similique quo, commodi vitae minima iure,
-      blanditiis obcaecati! Sed nihil, atque distinctio debitis aliquam
-      culpa quibusdam, expedita dolorum, aliquid odit veniam assumenda.
-      Adipisci distinctio quos velit nobis minus praesentium debitis
-      quaerat, iste aspernatur exercitationem libero. Quasi, blanditiis hic!
-      Amet asperiores autem cumque, laudantium saepe deserunt veritatis
-      officiis libero ad sunt, provident, ducimus tenetur officia illum
-      eligendi voluptatum tempora! Deleniti minima quo molestias nisi ea
-      illo modi at aliquid!
-    </div>
-  </div>
-
-  <div class="pure-g section">
-    <div class="chart-holder">
-      <div class="pure-u-1 chart" id="vis4"></div>
-    </div>
-    
-    <div class="pure-u-1 text">
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
-      laborum pariatur, odit deleniti quaerat quia enim? Hic et, temporibus
-      explicabo est impedit similique quo, commodi vitae minima iure,
-      blanditiis obcaecati! Sed nihil, atque distinctio debitis aliquam
-      culpa quibusdam, expedita dolorum, aliquid odit veniam assumenda.
-      Adipisci distinctio quos velit nobis minus praesentium debitis
-      quaerat, iste aspernatur exercitationem libero. Quasi, blanditiis hic!
-      Amet asperiores autem cumque, laudantium saepe deserunt veritatis
-      officiis libero ad sunt, provident, ducimus tenetur officia illum
-      eligendi voluptatum tempora! Deleniti minima quo molestias nisi ea
-      illo modi at aliquid!
-    </div>
-  </div>
-
-
-
-
-    <!-- pure grid group -->
+    <div class="sectiontitle">Recorded Butterfly Locations</div>
     <div class="pure-g">
-        <div class="pure-u-1-3">
-          <div class="description description-left">
-            <h2>butterfly recordings on Australian map</h2>
-            <img src="wing_aspect.jpg" alt="Description of Image" width = 100 height = 100>
-            <p>This visualization uses butterfly data from https://www.ala.org.au/ The butterfly species are Heteronympha merope and Pieris rapae.
-                The definition of wing aspect ratio in this visualization is the (width of the bounding box )/(height of the bounding box)
-                The size of circle indicates the butterfly wing aspect ratio </p>
-          </div>
+        <div class="chart-holder">
+            <div class="chart" id="vis6"></div>
         </div>
-        <div class="pure-u-2-3">
-          <div id="vis6" class="vis-container"></div>
-        </div>
-      </div>
-      <!-- end pure grid group -->
-
-
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-        <div class="pure-u-1-3">
-          <div class="description description-left">
-            <h2>species pie chart</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          </div>
-        </div>
-        <div class="pure-u-2-3">
-          <div id="vis5" class="vis-container"></div>
-        </div>
+       
     </div>
-    <!-- end pure grid group -->
-
-
-    <!-- pure grid group -->
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="description description-left">
-          <h2>wing aspect ratio heat maps</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-        </div>
-      </div>
-      <div class="pure-u-2-3">
-        <div id="vis1" class="vis-container"></div>
-      </div>
+    <div class="bodytext">
+        The above chart is a map showing both the location and wing aspect ratio
+        of each recoding. Each circle represents a recording of the butterfly.
+        The size of the circle represents its wing aspect ratio.<br>
+        <br>
+        It is observed that they are near sea and concentrate on the south eastern
+        part of Australia. 
+       
     </div>
-    <!-- end pure grid group -->
 
-    <!-- pure grid group -->
+    <hr class="separation-bar">
+
+    <div class="sectiontitle">Wing Aspect Ratio Boxplot</div>
     <div class="pure-g">
-        <div class="pure-u-1-3">
-          <div class="description description-left">
-            <h2>scatter plot of wing aspect ratio with longtitude and latitude</h2>
-            <p>this visualization has an interactivity. you can click on the legend to change the opacity of the dots. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          </div>
+        <div class="chart-holder">
+            <div class="chart" id="vis8"></div>
         </div>
-        <div class="pure-u-2-3">
-          <div id="vis2" class="vis-container"></div>
-        </div>
+       
     </div>
-    <!-- end pure grid group -->
+    <div class="bodytext">
+        From the boxplot, it is observed that the mean wing aspect ratio of Heteronympha merope
+        is about 1.6 and the mean wing aspect ratio of Pieris Rapae is about 1.8.
+        The wing aspect ratio range is wider for Heteronympha merope.
+    </div>
 
-    <!-- pure grid group -->
+    <hr class="separation-bar">
+
+    <div class="sectiontitle">Number of Recorded Butterfly Bar Chart</div>
     <div class="pure-g">
-        <div class="pure-u-1-3">
-          <div class="description description-left">
-            <h2>occrence vs year</h2>
-            <p>occurence bar chart.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </p>
-          </div>
+        <div class="chart-holder">
+            <div class="chart" id="vis7"></div>
         </div>
-        <div class="pure-u-2-3">
-          <div id="vis7" class="vis-container"></div>
-        </div>
+       
     </div>
-    <!-- end pure grid group -->
+    <div class="bodytext">
+        From the bar chart, it is observed that the number of recordings increase significantly
+        in the recent year. The reason for that might be with the help of peronal cellphones, it becomes easy and convenient for people
+        to upload photos to the online database.
+    </div>
 
 
+    <hr class="separation-bar">
 
-
-
-
-        
-    <!-- pure grid group 
+    <div class="sectiontitle">Wing Aspect Ratio & Weather</div>
     <div class="pure-g">
-        <div class="pure-u-1-2">
-          <div class="description description-left">
-            <h2>Temperature huminity heatmap</h2>
-            <p>this is a placeholder </p>
-          </div>
+        <div class="chart-holder">
+            <div class="chart" id="vis1"></div>
         </div>
-        <div class="pure-u-1-2">
-          <div id="vis4" class="vis-container"></div>
-        </div>
+       
     </div>
-     end pure grid group -->
+    <div class="bodytext">
+        Intuitively, butterfly wing aspect ratio should relate to weather. As the wing
+        gets bigger, it would become harder for them to fly in heavy wind area. The chart
+        supports this expectation. It is observed from the wind speed heatmap, the number of 
+        recordings is much bigger when the wing aspect ratio is below 1.8.<br>
+        <br>
+
+        Interestingly, it is oberved that wing aspect ratio below 1.8 seems more suitable for
+        survival under different types of weather.
+    </div>
+
+    <hr class="separation-bar">
+
+    <div class="sectiontitle">Wing Aspect Ratio & Geolocation</div>
+    <div class="pure-g">
+        <div class="chart-holder">
+            <div class="chart" id="vis2"></div>
+        </div>
+       
+    </div>
+    <div class="bodytext">
+         It is observed that the number of records concentrate when longtitude is 
+         around 145 and latitude is around -37 and decrease bilaterally.<br>
+         <br>
+         NOTE: there is an interaction if you click the species legend tag.
+    </div>
+
+    <div class="sectiontitle">Conclusion</div>
+
+    <div class="bodytext">
+         The study shows that the nature does not favour excessively large or small butterfly
+         wing aspect ratio. Under various conditions,butterflies of different wing aspect ratios
+         can be observed. This reflects biodiversity.
+
+    </div>
+
+
+
+
+
+
+
+
+
+      
+
+
+    <script type="text/javascript">
+        var specVis1 = "./wing_aspect_ratio_heat.json";
+        var specVis2 = "./scatter_plot_long.json";
+        var specVis3 = "./bar_species.json"
+        var specVis4 = "./heatmap_tem_hum.json"
+        var specVis5 = "./pie_chart.json"
+        var specVis6 = "./map.json"
+        var specVis7 = "./occurence_bar.json"
+        var specVis8 = "./boxplot.json"
     
-
+        vegaEmbed('#vis1', specVis1, { "actions": false });
     
-
-
-
-
-<!--
+        vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
     
-    <div class="pure-g">
-      <div class="pure-u-1-3">
-        <div class="description description-left">
-          <h2>temperature huminity heatmap</h2>
-          <p>This is the place holder</p>
-        </div>
-      </div>
-      <div class="pure-u-1-3">
-        <div id="vis4" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3" style="width: 31.5%;">
-        <div id="vis3" class="vis-container" style="margin-left: 15px;"></div>
-      </div>
-
-    </div>
-   
-
+        vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
     
-    <div class="pure-g">
-      <div class="pure-u-2-3">
-        <div id="vis2" class="vis-container"></div>
-      </div>
-      <div class="pure-u-1-3">
-        <div class="description description-right">
-          <h2>First and Second Columns Combined</h2>
-          <p>The first and second columns are combined. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Massa sapien
-            faucibus et molestie ac feugiat sed. Egestas purus viverra accumsan in nisl.</p>
-        </div>
-      </div>
-
-    </div>
+        vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
     
--->
-  
-
-
-  </div> <!-- end page -->
-
-  <script type="text/javascript">
-    var specVis1 = "./wing_aspect_ratio_heat.json";
-    var specVis2 = "./scatter_plot_long.json";
-    var specVis3 = "./bar_species.json"
-    var specVis4 = "./heatmap_tem_hum.json"
-    var specVis5 = "./pie_chart.json"
-    var specVis6 = "./map.json"
-    var specVis7 = "./occurence_bar.json"
-    var specVis8 = "./boxplot.json"
-
-    vegaEmbed('#vis1', specVis1, { "actions": false });
-
-    vegaEmbed('#vis2', specVis2, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis3', specVis3, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis4', specVis4, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-
-    vegaEmbed('#vis8', specVis8, { "actions": false }).then(function (result) {
-      // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
-    }).catch(console.error);
-  </script>
-</body>
-
+        vegaEmbed('#vis5', specVis5, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    
+        vegaEmbed('#vis6', specVis6, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    
+        vegaEmbed('#vis7', specVis7, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+    
+        vegaEmbed('#vis8', specVis8, { "actions": false }).then(function (result) {
+          // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+        }).catch(console.error);
+      </script>
+  </body>
 </html>

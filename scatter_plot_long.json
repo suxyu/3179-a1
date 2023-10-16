@@ -1,6 +1,6 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width": 800,
+  "width": 600,
   "data": {
     "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
   },
@@ -28,7 +28,7 @@
             "y": {
               "field": "ratio",
               "type": "quantitative",
-              "title": "Ratio"
+              "title": "Wing Aspect Ratio"
             },
             "color": {
               "field": "name",
@@ -49,7 +49,7 @@
               {
                 "field": "ratio",
                 "type": "quantitative",
-                "title": "Ratio"
+                "title": "Wing Aspect Ratio"
               }
             ],
             "opacity": {
@@ -84,7 +84,7 @@
             "y": {
               "field": "ratio",
               "type": "quantitative",
-              "title": "Ratio"
+              "title": "Wing Aspect Ratio"
             },
             "color": {
               "field": "name",

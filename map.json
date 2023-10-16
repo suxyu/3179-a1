@@ -1,9 +1,22 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-  "width":600,
-  "height":400,
-  "title": "recorded butterfly in Australia",
+  "width": 600,
+  "height": 400,
+  "title": "Recorded Butterflies in Australia",
   "projection": {"type": "mercator"},
+  "params": [
+    {
+      "name": "selectedYear",
+      "value": 2022,
+      "bind": {
+        "input": "range",
+        "min": 2008,
+        "max": 2022,
+        "step": 1,
+        "name": " "
+      }
+    }
+  ],
   "layer": [
     {
       "data": {
@@ -13,7 +26,6 @@
           "feature": "ne_10m_admin_1_states_provinces"
         }
       },
-      
       "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
     },
     {
@@ -27,23 +39,25 @@
       "data": {
         "url": "https://raw.githubusercontent.com/suxyu/3179-a2/main/final_year.csv"
       },
-        "transform": [
-    {
-      "calculate": "datum.ratio >= 2.5 ? 'Large' : datum.ratio >= 2 ? 'Medium' : 'Small'",
-      "as": "size_bin"
-    }
-  ],
+      "transform": [
+        {"calculate": "split(datum.date, '/')[2]", "as": "year"},
+        {
+          "calculate": "datum.ratio >= 2.5 ? 'Large' : datum.ratio >= 2 ? 'Medium' : 'Small'",
+          "as": "size_bin"
+        },
+        {"filter": "datum.year == selectedYear"}
+      ],
       "mark": {"type": "circle", "tooltip": {"content": "data"}},
       "encoding": {
         "longitude": {"field": "longtitude", "type": "quantitative"},
         "latitude": {"field": "latitude", "type": "quantitative"},
-   "size": {
-      "field": "size_bin",
-      "type": "ordinal",
-      "scale": {"domain": ["Small", "Medium", "Large"], "range": [100, 300, 500]},
-      "legend": {"title": "Wing Aspect ratio"}
-    },
-         "color": {
+        "size": {
+          "field": "size_bin",
+          "type": "ordinal",
+          "scale": {"domain": ["Small", "Medium", "Large"], "range": [100, 300, 500]},
+          "legend": {"title": "Wing Aspect ratio"}
+        },
+        "color": {
           "field": "name",
           "type": "nominal",
           "legend": {"title": "Butterfly Name"}
@@ -51,7 +65,8 @@
         "tooltip": [
           {"field": "ratio", "type": "quantitative", "title": "Wing Aspect Ratio"},
           {"field": "longtitude", "type": "quantitative", "title": "Longitude"},
-          {"field": "latitude", "type": "quantitative", "title": "Latitude"}
+          {"field": "latitude", "type": "quantitative", "title": "Latitude"},
+          {"field": "year", "type": "ordinal", "title": "Year"}
         ]
       }
     }

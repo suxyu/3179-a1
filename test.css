@@ -6,31 +6,30 @@ body {
 
 
 #mainTitle {
-    background-color: #014b04; /* Green background */
-    color: white; /* White text color */
+    background-color: #014b04; 
+    color: white; 
     text-align: center; /* Centered text */
-    font-size: 50px; /* Set font size */
-    font-weight: bold; /* Bold text */
-    padding: 10px; /* Padding around the text */
-    border-radius: 0px; /* Rounded corners */
+    font-size: 50px; 
+    font-weight: bold; 
+    padding: 10px; 
     font-family: "Times New Roman", Times, serif; /* Serif font */
 
 
 
-    margin-left:200px;
-    margin-right:200px;
+    margin-left:300px;
+    margin-right:300px;
     border-radius: 15px;
 }
 
 .sectiontitle{
-    background-color: #9daf4c; /* Green background */
-    color: white; /* White text color */
+    background-color: #9daf4c; 
+    color: white; 
     text-align: center; /* Centered text */
-    font-size: 50px; /* Set font size */
-    font-weight: bold; /* Bold text */
-    padding: 10px; /* Padding around the text */
-    border-radius: 0px; /* Rounded corners */
-    font-family: "Times New Roman", Times, serif; /* Serif font */
+    font-size: 40px; 
+    font-weight: thick; 
+    padding: 10px; 
+    border-radius: 0px; 
+    font-family: "Times New Roman", Times, serif; 
 
 
     margin-left:300px;
@@ -40,37 +39,56 @@ body {
 }
 
 .bodytext{
-    background-color: #b9bea5; /* Green background */
-    color: rgb(11, 11, 11); /* White text color */
-    text-align: center; /* Centered text */
-    font-size: 30px; /* Set font size */
-    font-weight: lighter; /* Bold text */
-    padding: 10px; /* Padding around the text */
-    border-radius: 15px; /* Rounded corners */
-    font-family: "Times New Roman", Times, serif; /* Serif font */
+    background-color: #b9bea5; 
+    color: rgb(11, 11, 11); 
+    text-align: left; 
+    font-size: 30px; 
+    font-weight: lighter; 
+    padding: 10px; 
+    border-radius: 15px; 
+    font-family: "Times New Roman", Times, serif; 
 
 
     margin-left:300px;
     margin-right:300px;
-    margin-bottom: 100px;
+    margin-bottom: 10px;
 }
 
+.pretext{
+    background-color: #b9bea5; 
+    color: rgb(11, 11, 11); 
+    text-align: left; 
+    font-size: 30px; 
+    font-weight: lighter; 
+    padding: 10px; 
+    font-family: "Times New Roman", Times, serif; 
 
+
+    margin-left:350px;
+    margin-right:350px;
+    margin-top:10px;
+    margin-bottom:10px;
+    border-radius: 15px;
+
+
+}
+
+.red-text {
+    color: red;
+}
 
 
 
 .chart {
     margin-top:15px;
     margin-bottom:15px;
-
-    border-radius: 15px;
     padding: 0;
     width: 100%;
     
 }
 
 .chart-holder {
-    margin:10;
+    margin:0;
 }
 
 
@@ -100,16 +118,20 @@ body {
 
 
 div {
-  display: flex;
-  justify-content: center;
-  font-family: "Montserrat";
+    display: flex;
+    justify-content: center;
+    font-family: "Georgia", "Arial", sans-serif;
 }
 
-.vega-actions {
-  display: none;
-  pointer-events: none;
+.serif {
+    display: flex;
+    justify-content: center;
+    font-family: "Georgia", serif;
+}
+  
+.sans {
+    display: flex;
+    justify-content: center;
+    font-family: "Arial", sans-serif;
 }
 
-/* 
-font-family: 'Montserrat', sans-serif;
- */
